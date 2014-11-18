@@ -53,9 +53,9 @@
 // Global variables
 
 // strings
-u08 PROGMEM CmdlinePrompt[] = "cmd>";
-u08 PROGMEM CmdlineNotice[] = "cmdline: ";
-u08 PROGMEM CmdlineCmdNotFound[] = "command not found";
+const u08 PROGMEM CmdlinePrompt[] = "cmd>";
+const u08 PROGMEM CmdlineNotice[] = "cmdline: ";
+const u08 PROGMEM CmdlineCmdNotFound[] = "command not found";
 
 // command list
 // -commands are null-terminated strings
@@ -379,7 +379,7 @@ void cmdlineMainLoop(void)
 void cmdlinePrintPrompt(void)
 {
 	// print a new command prompt
-	u08* ptr = CmdlinePrompt;
+	const u08* ptr = CmdlinePrompt;
 	while(pgm_read_byte(ptr)) cmdlineOutputFunc( pgm_read_byte(ptr++) );
 }
 

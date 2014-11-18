@@ -33,11 +33,11 @@
 //static int __attribute__ ((progmem)) MP3_Bitrates[] =
 //  { 0,  8, 16, 24, 32, 40, 48, 56,  64,  80,  96, 112, 128, 144, 160, 0,
 //     0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320, 0};
-static unsigned char __attribute__ ((progmem)) MP3_Bitrates[] =
+static const unsigned char __attribute__ ((progmem)) MP3_Bitrates[] =
 	{ 0,  4,  8, 12, 16, 20, 24, 28, 32, 40, 48, 56,  64,  72,  80, 0,
 	  0, 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 0};
 
-static unsigned char __attribute__ ((progmem)) MP3_SamplingFrequencies[] =
+static const unsigned char __attribute__ ((progmem)) MP3_SamplingFrequencies[] =
    { 11, 12,  8,  0,      // MPEG 2.5 rates
       0,  0,  0,  0,      // reserved rates
      22, 24, 16,  0,      // MPEG 2   rates
@@ -45,7 +45,7 @@ static unsigned char __attribute__ ((progmem)) MP3_SamplingFrequencies[] =
    };
 
 // STA013 firmware update and configuration data
-static unsigned char __attribute__ ((progmem)) STA013_UpdateData[] = 
+static const unsigned char __attribute__ ((progmem)) STA013_UpdateData[] = 
    {
 0x3a, 0x01, 0x2a, 0x04, 0x28, 0x00, 0x29, 0x00, 0x20, 0x00, 
 0x21, 0x00, 0x22, 0x00, 0x23, 0x00, 0x24, 0x00, 0x25, 0x00, 

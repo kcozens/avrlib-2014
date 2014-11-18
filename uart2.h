@@ -99,10 +99,10 @@
 #endif
 
 //! Type of interrupt handler to use for uart interrupts.
-/// Value may be SIGNAL or INTERRUPT.
+/// Value may be ISR or INTERRUPT.
 /// \warning Do not change unless you know what you're doing.
 #ifndef UART_INTERRUPT_HANDLER
-#define UART_INTERRUPT_HANDLER	SIGNAL
+#define UART_INTERRUPT_HANDLER	ISR
 #endif
 
 // compatibility for the mega161

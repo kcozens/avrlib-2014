@@ -301,7 +301,7 @@ void uartswRxBitService(void)
 	}
 }
 
-SIGNAL(SIG_INTERRUPT2)
+ISR(INT2_vect)
 {
 	// run RxBit service routine
 	uartswRxBitService();

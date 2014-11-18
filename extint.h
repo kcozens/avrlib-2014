@@ -50,21 +50,21 @@
 
 // type of interrupt handler to use
 // *do not change unless you know what you're doing
-// Value may be SIGNAL or INTERRUPT
+// Value may be ISR or INTERRUPT
 #ifndef EXTINT_INTERRUPT_HANDLER
-#define EXTINT_INTERRUPT_HANDLER	SIGNAL
+#define EXTINT_INTERRUPT_HANDLER	ISR
 #endif
 
 // processor-adaptive defines
 // mainstream AVR processors generally have 1,2,3, or 8 external interrupts
 // (if someone has a better idea of how to manage this, let me know)
-#ifdef SIG_INTERRUPT7
+#ifdef INT7_vect
 	#define EXTINT_NUM_INTERRUPTS	8
 #else
-#ifdef SIG_INTERRUPT2
+#ifdef INT7_vect
 	#define EXTINT_NUM_INTERRUPTS	3
 #else
-#ifdef SIG_INTERRUPT1
+#ifdef INT1_vect
 	#define EXTINT_NUM_INTERRUPTS	2
 #else
 	#define EXTINT_NUM_INTERRUPTS	1

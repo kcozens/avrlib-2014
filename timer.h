@@ -177,9 +177,9 @@
 
 // default type of interrupt handler to use for timers
 // *do not change unless you know what you're doing
-// Value may be SIGNAL or INTERRUPT
+// Value may be ISR or INTERRUPT
 #ifndef TIMER_INTERRUPT_HANDLER
-#define TIMER_INTERRUPT_HANDLER		SIGNAL
+#define TIMER_INTERRUPT_HANDLER		ISR
 #endif
 
 // functions

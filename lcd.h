@@ -103,7 +103,7 @@
 #define LCD_MODE_DEFAULT		((1<<LCD_ENTRY_MODE) | (1<<LCD_ENTRY_INC))
 
 // custom LCD characters
-extern unsigned char __attribute__ ((progmem)) LcdCustomChar[];
+extern const unsigned char __attribute__ ((progmem)) LcdCustomChar[];
 #define LCDCHAR_PROGRESS05		0	// 0/5 full progress block
 #define LCDCHAR_PROGRESS15		1	// 1/5 full progress block
 #define LCDCHAR_PROGRESS25		2	// 2/5 full progress block

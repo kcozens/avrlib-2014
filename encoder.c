@@ -51,7 +51,7 @@ void encoderInit(void)
 	// - any-edge interrupt triggering
 	// - enable interrupt
 
-	#ifdef ENC0_SIGNAL
+	#ifdef ENC0_ISR
 		// set interrupt pins to input and apply pullup resistor
 		cbi(ENC0_PHASEA_DDR, ENC0_PHASEA_PIN);
 		sbi(ENC0_PHASEA_PORT, ENC0_PHASEA_PIN);
@@ -64,7 +64,7 @@ void encoderInit(void)
 		// enable interrupts
 		sbi(IMSK, ENC0_INT);	// ISMK is auto-defined in encoder.h
 	#endif
-	#ifdef ENC1_SIGNAL
+	#ifdef ENC1_ISR
 		// set interrupt pins to input and apply pullup resistor
 		cbi(ENC1_PHASEA_DDR, ENC1_PHASEA_PIN);
 		sbi(ENC1_PHASEA_PORT, ENC1_PHASEA_PIN);
@@ -77,7 +77,7 @@ void encoderInit(void)
 		// enable interrupts
 		sbi(IMSK, ENC1_INT);	// ISMK is auto-defined in encoder.h
 	#endif
-	#ifdef ENC2_SIGNAL
+	#ifdef ENC2_ISR
 		// set interrupt pins to input and apply pullup resistor
 		cbi(ENC2_PHASEA_DDR, ENC2_PHASEA_PIN);
 		sbi(ENC2_PHASEA_PORT, ENC2_PHASEA_PIN);
@@ -90,7 +90,7 @@ void encoderInit(void)
 		// enable interrupts
 		sbi(IMSK, ENC2_INT);	// ISMK is auto-defined in encoder.h
 	#endif
-	#ifdef ENC3_SIGNAL
+	#ifdef ENC3_ISR
 		// set interrupt pins to input and apply pullup resistor
 		cbi(ENC3_PHASEA_DDR, ENC3_PHASEA_PIN);
 		sbi(ENC3_PHASEA_PORT, ENC3_PHASEA_PIN);
@@ -112,19 +112,19 @@ void encoderInit(void)
 void encoderOff(void)
 {
 	// disable encoder interrupts
-	#ifdef ENC0_SIGNAL
+	#ifdef ENC0_ISR
 		// disable interrupts
 		sbi(IMSK, INT0);	// ISMK is auto-defined in encoder.h
 	#endif
-	#ifdef ENC1_SIGNAL
+	#ifdef ENC1_ISR
 		// disable interrupts
 		sbi(IMSK, INT1);	// ISMK is auto-defined in encoder.h
 	#endif
-	#ifdef ENC2_SIGNAL
+	#ifdef ENC2_ISR
 		// disable interrupts
 		sbi(IMSK, INT2);	// ISMK is auto-defined in encoder.h
 	#endif
-	#ifdef ENC3_SIGNAL
+	#ifdef ENC3_ISR
 		// disable interrupts
 		sbi(IMSK, INT3);	// ISMK is auto-defined in encoder.h
 	#endif
@@ -149,9 +149,9 @@ void encoderSetPosition(u08 encoderNum, s32 position)
 	// else do nothing
 }
 
-#ifdef ENC0_SIGNAL
+#ifdef ENC0_ISR
 //! Encoder 0 interrupt handler
-SIGNAL(ENC0_SIGNAL)
+ISR(ENC0_ISR)
 {
 	// encoder has generated a pulse
 	// check the relative phase of the input channels
@@ -168,9 +168,9 @@ SIGNAL(ENC0_SIGNAL)
 }
 #endif
 
-#ifdef ENC1_SIGNAL
+#ifdef ENC1_ISR
 //! Encoder 1 interrupt handler
-SIGNAL(ENC1_SIGNAL)
+ISR(ENC1_ISR)
 {
 	// encoder has generated a pulse
 	// check the relative phase of the input channels
@@ -187,9 +187,9 @@ SIGNAL(ENC1_SIGNAL)
 }
 #endif
 
-#ifdef ENC2_SIGNAL
+#ifdef ENC2_ISR
 //! Encoder 2 interrupt handler
-SIGNAL(ENC2_SIGNAL)
+ISR(ENC2_ISR)
 {
 	// encoder has generated a pulse
 	// check the relative phase of the input channels
@@ -206,9 +206,9 @@ SIGNAL(ENC2_SIGNAL)
 }
 #endif
 
-#ifdef ENC3_SIGNAL
+#ifdef ENC3_ISR
 //! Encoder 3 interrupt handler
-SIGNAL(ENC3_SIGNAL)
+ISR(ENC3_ISR)
 {
 	// encoder has generated a pulse
 	// check the relative phase of the input channels

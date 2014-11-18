@@ -227,7 +227,7 @@ u08 uartSendBuffer(char *buffer, u16 nBytes)
 }
 */
 // UART Transmit Complete Interrupt Handler
-UART_INTERRUPT_HANDLER(SIG_UART_TRANS)
+UART_INTERRUPT_HANDLER(USART_TXC_vect)
 {
 	// check if buffered tx is enabled
 	if(uartBufferedTx)
@@ -255,7 +255,7 @@ UART_INTERRUPT_HANDLER(SIG_UART_TRANS)
 }
 
 // UART Receive Complete Interrupt Handler
-UART_INTERRUPT_HANDLER(SIG_UART_RECV)
+UART_INTERRUPT_HANDLER(USART_RXC_vect)
 {
 	u08 c;
 	

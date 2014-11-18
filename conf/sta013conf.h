@@ -29,6 +29,6 @@
 #define STA013_DEMAND_PORT		PORTE				// port to which DEMAND line is connected
 #define STA013_DEMAND_PORTIN	PINE				// input port to which DEMAND line is connected
 #define STA013_DEMAND_PIN		PE4				// port pin to which DEMAND line is connected
-#define STA013_DEMAND_INTR		SIG_INTERRUPT4	// interrupt to which DEMAND line is connected
+#define STA013_DEMAND_INTR		INT4_vect	// interrupt to which DEMAND line is connected
 
 #endif

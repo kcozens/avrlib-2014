@@ -25,7 +25,7 @@
 #include "lcd.h"
 
 // custom LCD characters
-unsigned char __attribute__ ((progmem)) LcdCustomChar[] =
+const unsigned char __attribute__ ((progmem)) LcdCustomChar[] =
 {
 	0x00, 0x1F, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x00, // 0. 0/5 full progress block
 	0x00, 0x1F, 0x10, 0x10, 0x10, 0x10, 0x1F, 0x00, // 1. 1/5 full progress block

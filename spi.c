@@ -39,7 +39,7 @@ volatile u08 spiTransferComplete;
 
 // SPI interrupt service handler
 #ifdef SPI_USEINT
-SIGNAL(SIG_SPI)
+ISR(SIG_SPI)
 {
 	spiTransferComplete = TRUE;
 }

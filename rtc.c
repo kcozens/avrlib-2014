@@ -36,7 +36,7 @@
 #include "rtc.h"
 
 // Program ROM constants
-static char __attribute__ ((progmem)) MonthDayTable[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+static const char __attribute__ ((progmem)) MonthDayTable[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
 // Global variables
 // time registers
