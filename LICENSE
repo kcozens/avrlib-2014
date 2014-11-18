@@ -1,2 +1,7 @@
-This code is distributed under the GNU Public License which can be found at
-http://www.gnu.org/licenses/gpl.txt
+This code is distributed under the GNU Public License (version 2) which can
+be found at http://www.gnu.org/licenses/gpl-2.0.html
+
+The files contain declarations stating the code is distributed under the
+GNU Public License which can be found at http://www.gnu.org/licenses/gpl.txt
+but the age of the files needs to be taken in to account. At the time the
+files were written the URL pointed to a copy of the text for GPL v2.
