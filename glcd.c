@@ -86,17 +86,19 @@ void glcdRectangle(u08 x, u08 y, u08 a, u08 b)
 // draw circle
 void glcdCircle(u08 xcenter, u08 ycenter, u08 radius)
 {
-  int tswitch, y, x = 0;
-  unsigned char d;
+  int x = 0;
+  int y = radius;
+  int tswitch = 3 - 2 * radius;
 
-  d = ycenter - xcenter;
-  y = radius;
-  tswitch = 3 - 2 * radius;
   while (x <= y) {
-    glcdSetDot(xcenter + x, ycenter + y);     glcdSetDot(xcenter + x, ycenter - y);
-    glcdSetDot(xcenter - x, ycenter + y);     glcdSetDot(xcenter - x, ycenter - y);
-    glcdSetDot(ycenter + y - d, ycenter + x); glcdSetDot(ycenter + y - d, ycenter - x);
-    glcdSetDot(ycenter - y - d, ycenter + x); glcdSetDot(ycenter - y - d, ycenter - x);
+    glcdSetDot(xcenter + x, ycenter + y);
+    glcdSetDot(xcenter + x, ycenter - y);
+    glcdSetDot(xcenter - x, ycenter + y);
+    glcdSetDot(xcenter - x, ycenter - y);
+    glcdSetDot(xcenter + y, ycenter + x);
+    glcdSetDot(xcenter + y, ycenter - x);
+    glcdSetDot(xcenter - y, ycenter + x);
+    glcdSetDot(xcenter - y, ycenter - x);
 
     if (tswitch < 0) tswitch += (4 * x + 6);
     else {
