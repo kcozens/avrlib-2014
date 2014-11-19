@@ -50,8 +50,12 @@ void glcdInitHW(void)
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_E);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_CS0);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_CS1);
+#if GLCD_NUM_CONTROLLERS > 2
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_CS2);
+#endif
+#if GLCD_NUM_CONTROLLERS > 3
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_CS3);
+#endif
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_RESET);
 	// initialize LCD control port to output
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_RS);
@@ -59,8 +63,12 @@ void glcdInitHW(void)
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_E);
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_CS0);
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_CS1);
+#if GLCD_NUM_CONTROLLERS > 2
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_CS2);
+#endif
+#if GLCD_NUM_CONTROLLERS > 3
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_CS3);
+#endif
 	sbi(GLCD_CTRL_DDR, GLCD_CTRL_RESET);
 	// initialize LCD data
 	outb(GLCD_DATA_PORT, 0x00);
@@ -78,16 +86,24 @@ void glcdControllerSelect(u08 controller)
 	// unselect all controllers
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_CS0);
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_CS1);
+#if GLCD_NUM_CONTROLLERS > 2
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_CS2);
+#endif
+#if GLCD_NUM_CONTROLLERS > 3
 	cbi(GLCD_CTRL_PORT, GLCD_CTRL_CS3);
+#endif
 
 	// select requested controller
 	switch(controller)
 	{
 	case 0:	sbi(GLCD_CTRL_PORT, GLCD_CTRL_CS0); break;
 	case 1:	sbi(GLCD_CTRL_PORT, GLCD_CTRL_CS1); break;
+#if GLCD_NUM_CONTROLLERS > 2
 	case 2:	sbi(GLCD_CTRL_PORT, GLCD_CTRL_CS2); break;
+#endif
+#if GLCD_NUM_CONTROLLERS > 3
 	case 3:	sbi(GLCD_CTRL_PORT, GLCD_CTRL_CS3); break;
+#endif
 	default: break;
 	}
 #endif

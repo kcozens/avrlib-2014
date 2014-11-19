@@ -45,8 +45,12 @@
 		#define GLCD_CTRL_E		PB2		// pin for LCD Enable
 		#define GLCD_CTRL_CS0	PB3		// pin for LCD Controller 0 Chip Select
 		#define GLCD_CTRL_CS1	PB4		// pin for LCD Controller 1 Chip Select(*)
+#if GLCD_NUM_CONTROLLERS > 2
 		#define GLCD_CTRL_CS2	PB6		// pin for LCD Controller 2 Chip Select(*)
+#endif
+#if GLCD_NUM_CONTROLLERS > 3
 		#define GLCD_CTRL_CS3	PB7		// pin for LCD Controller 3 Chip Select(*)
+#endif
 		#define GLCD_CTRL_RESET	PB5		// pin for LCD Reset
 		// (*) NOTE: additonal controller chip selects are optional and 
 		// will be automatically used per each step in 64 pixels of display size
